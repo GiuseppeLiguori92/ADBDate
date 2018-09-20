@@ -28,4 +28,10 @@ public class ControllerPresenter implements Presenter {
         commandExecutor.addWeek();
         view.showDate(commandExecutor.readDate());
     }
+
+    @Override
+    public void reset() {
+        commandExecutor.resetDate();
+        view.showDate(commandExecutor.readDate());
+    }
 }

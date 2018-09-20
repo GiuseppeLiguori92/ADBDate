@@ -5,6 +5,7 @@ public interface Contract {
         void initialise();
         void addDay();
         void addWeek();
+        void reset();
     }
 
     interface View {

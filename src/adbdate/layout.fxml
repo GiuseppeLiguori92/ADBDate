@@ -16,8 +16,9 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Label fx:id="lblDate" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="2" />
+      <Label fx:id="lblDate" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="3" />
       <Button fx:id="btPlusDay" mnemonicParsing="false" text="+1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Button fx:id="btPlusWeek" mnemonicParsing="false" text="+7" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button fx:id="btReset" mnemonicParsing="false" text="reset" GridPane.columnIndex="3" GridPane.rowIndex="2" />
    </children>
 </GridPane>

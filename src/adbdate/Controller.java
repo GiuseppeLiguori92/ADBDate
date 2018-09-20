@@ -13,6 +13,8 @@ public class Controller implements Contract.View {
     private Button btPlusDay;
     @FXML
     private Button btPlusWeek;
+    @FXML
+    private Button btReset;
 
     @FXML
     private void initialize() {
@@ -21,6 +23,7 @@ public class Controller implements Contract.View {
 
         btPlusDay.setOnAction(event -> presenter.addDay());
         btPlusWeek.setOnAction(event -> presenter.addWeek());
+        btReset.setOnAction(event -> presenter.reset());
     }
 
     @Override
