@@ -10,6 +10,8 @@ public class Controller implements Contract.View {
     @FXML
     private Label lblDate;
     @FXML
+    private Button btPlusHour;
+    @FXML
     private Button btPlusDay;
     @FXML
     private Button btPlusWeek;
@@ -21,6 +23,7 @@ public class Controller implements Contract.View {
         presenter = new ControllerPresenter(this);
         presenter.initialise();
 
+        btPlusHour.setOnAction(event -> presenter.addHour());
         btPlusDay.setOnAction(event -> presenter.addDay());
         btPlusWeek.setOnAction(event -> presenter.addWeek());
         btReset.setOnAction(event -> presenter.reset());

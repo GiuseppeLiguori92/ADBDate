@@ -17,8 +17,17 @@
    </rowConstraints>
    <children>
       <Label fx:id="lblDate" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="3" />
-      <Button fx:id="btPlusDay" mnemonicParsing="false" text="+1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button fx:id="btPlusWeek" mnemonicParsing="false" text="+7" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Button fx:id="btReset" mnemonicParsing="false" text="reset" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+      <Label text="Days" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="3" />
+
+      <Button fx:id="btPlusDay" mnemonicParsing="false" text="+1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button fx:id="btPlusWeek" mnemonicParsing="false" text="+7" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+
+      <Label text="Hour" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.columnSpan="3" />
+
+      <Button fx:id="btPlusHour" mnemonicParsing="false" text="+1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+      <Button fx:id="btReset" mnemonicParsing="false" text="reset" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
    </children>
 </GridPane>

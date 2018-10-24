@@ -11,6 +11,7 @@ public class CommandExecutor {
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMddHHmmYYYY.ss");
 
     private long day = 0;
+    private long hour = 0;
 
     private String execute(String command) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -41,11 +42,17 @@ public class CommandExecutor {
 
     public void resetDate() {
         day = 0;
+        hour = 0;
         setDate(getNow());
     }
 
     private LocalDateTime getNow() {
         return LocalDateTime.now();
+    }
+
+    public void addHour() {
+        hour++;
+        addHours(hour);
     }
 
     public void addDay() {
@@ -58,16 +65,22 @@ public class CommandExecutor {
         addDays(day);
     }
 
-    private void addDays(long days) {
-        LocalDateTime localDateTime = getNow().plus(days, ChronoUnit.DAYS);
+    private void addTime(long days, ChronoUnit days2) {
+        LocalDateTime localDateTime = getNow().plus(days, days2);
         setDate(localDateTime);
     }
 
+    private void addDays(long days) {
+        addTime(days, ChronoUnit.DAYS);
+    }
+
+    private void addHours(long hours) {
+        addTime(hours, ChronoUnit.HOURS);
+    }
 
     public String readDate() {
         return execute("adb shell date");
     }
-
 
     public void setDate(LocalDateTime localDateTime) {
         String format = dateTimeFormatter.format(localDateTime);

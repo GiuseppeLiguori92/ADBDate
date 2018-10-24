@@ -24,6 +24,12 @@ public class ControllerPresenter implements Presenter {
     }
 
     @Override
+    public void addHour() {
+        commandExecutor.addHour();
+        view.showDate(commandExecutor.readDate());
+    }
+
+    @Override
     public void addWeek() {
         commandExecutor.addWeek();
         view.showDate(commandExecutor.readDate());
