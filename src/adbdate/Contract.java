@@ -7,6 +7,8 @@ public interface Contract {
         void addDay();
         void addWeek();
         void reset();
+
+        void sendBootBroadcast();
     }
 
     interface View {

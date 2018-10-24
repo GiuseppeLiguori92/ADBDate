@@ -82,6 +82,14 @@ public class CommandExecutor {
         return execute("adb shell date");
     }
 
+    public void sendBootBroadcast() {
+       sendBroadcast("android.intent.action.BOOT_COMPLETED");
+    }
+
+    private void sendBroadcast(String action) {
+        execute("adb shell am broadcast -a " + action);
+    }
+
     public void setDate(LocalDateTime localDateTime) {
         String format = dateTimeFormatter.format(localDateTime);
         System.out.println("CommandExecutor.setDate: " + format + "\n" + localDateTime);

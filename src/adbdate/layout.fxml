@@ -27,7 +27,8 @@
 
       <Button fx:id="btPlusHour" mnemonicParsing="false" text="+1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-      <Button fx:id="btReset" mnemonicParsing="false" text="reset" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Button fx:id="btReset" mnemonicParsing="false" text="reset date" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
+      <Button fx:id="btBootBroadcast" mnemonicParsing="false" text="BOOT_COMPLETED" GridPane.columnIndex="1" GridPane.rowIndex="7" />
    </children>
 </GridPane>

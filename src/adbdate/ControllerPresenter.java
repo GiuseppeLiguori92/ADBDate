@@ -40,4 +40,9 @@ public class ControllerPresenter implements Presenter {
         commandExecutor.resetDate();
         view.showDate(commandExecutor.readDate());
     }
+
+    @Override
+    public void sendBootBroadcast() {
+        commandExecutor.sendBootBroadcast();
+    }
 }
