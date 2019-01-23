@@ -82,6 +82,10 @@ public class CommandExecutor {
         return execute("adb shell date");
     }
 
+    public String root() {
+        return execute("adb root");
+    }
+
     public void sendBootBroadcast() {
        sendBroadcast("android.intent.action.BOOT_COMPLETED");
     }

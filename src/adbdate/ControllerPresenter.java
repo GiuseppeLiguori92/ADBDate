@@ -10,6 +10,7 @@ public class ControllerPresenter implements Presenter {
         this.view = view;
         commandExecutor = new CommandExecutor();
         commandExecutor.resetDate();
+        commandExecutor.root();
     }
 
     @Override
