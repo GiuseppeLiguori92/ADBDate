@@ -114,4 +114,23 @@ public class CommandExecutor {
     private void adjustTimezone(String timezone) {
         execute("adb shell setprop persist.sys.timezone " + timezone);
     }
+
+    public String getStatus() {
+        return execute("adb shell dumpsys deviceidle get deep");
+    }
+
+    public String dozeMode() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(execute("adb shell dumpsys battery unplug"));
+        stringBuilder.append(execute("adb shell dumpsys deviceidle enable"));
+        stringBuilder.append(execute("adb shell dumpsys deviceidle force-idle"));
+        return stringBuilder.toString();
+    }
+
+    public String normalMode() {
+        StringBuilder stringBuilder = new StringBuilder();
+        execute("adb shell dumpsys battery reset");
+        execute("adb shell dumpsys deviceidle disable");
+        return stringBuilder.toString();
+    }
 }

@@ -7,11 +7,18 @@ public interface Contract {
         void addDay();
         void addWeek();
         void reset();
+        void root();
+        void dozeMode();
+        void normalMode();
+        void getStatus();
 
         void sendBootBroadcast();
     }
 
     interface View {
         void showDate(String date);
+        void showStatus(String status);
+        void showIsRooted();
+        void showIsNotRooted();
     }
 }

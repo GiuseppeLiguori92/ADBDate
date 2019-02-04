@@ -17,9 +17,19 @@ public class Controller implements Contract.View {
     private Button btPlusWeek;
     @FXML
     private Button btReset;
-
+    @FXML
+    private Button btRoot;
+    @FXML
+    private Label lblRoot;
     @FXML
     private Button btBootBroadcast;
+
+    @FXML
+    private Button btDozeMode;
+    @FXML
+    private Button btNormalMode;
+    @FXML
+    private Label lblStatus;
 
     @FXML
     private void initialize() {
@@ -32,10 +42,30 @@ public class Controller implements Contract.View {
         btReset.setOnAction(event -> presenter.reset());
 
         btBootBroadcast.setOnAction(event -> presenter.sendBootBroadcast());
+
+        btRoot.setOnAction(event -> presenter.root());
+
+        btDozeMode.setOnAction(event -> presenter.dozeMode());
+        btNormalMode.setOnAction(event -> presenter.normalMode());
     }
 
     @Override
     public void showDate(String date) {
         lblDate.setText(date);
+    }
+
+    @Override
+    public void showStatus(String status) {
+        lblStatus.setText(status);
+    }
+
+    @Override
+    public void showIsRooted() {
+        lblRoot.setText("Rooted");
+    }
+
+    @Override
+    public void showIsNotRooted() {
+        lblRoot.setText("*NOT Rooted");
     }
 }
