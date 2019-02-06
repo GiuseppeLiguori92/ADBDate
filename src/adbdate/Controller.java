@@ -32,6 +32,9 @@ public class Controller implements Contract.View {
     private Label lblStatus;
 
     @FXML
+    private Label lblDevices;
+
+    @FXML
     private void initialize() {
         presenter = new ControllerPresenter(this);
         presenter.initialise();
@@ -47,6 +50,11 @@ public class Controller implements Contract.View {
 
         btDozeMode.setOnAction(event -> presenter.dozeMode());
         btNormalMode.setOnAction(event -> presenter.normalMode());
+    }
+
+    @Override
+    public void showDevices(String devices) {
+        lblDevices.setText(devices);
     }
 
     @Override

@@ -22,6 +22,7 @@ public class ControllerPresenter implements Presenter {
     @Override
     public void initialise() {
         view.showDate(commandExecutor.readDate());
+        view.showDevices(commandExecutor.getDevices());
     }
 
     @Override

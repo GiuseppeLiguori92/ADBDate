@@ -16,6 +16,7 @@ public interface Contract {
     }
 
     interface View {
+        void showDevices(String devices);
         void showDate(String date);
         void showStatus(String status);
         void showIsRooted();

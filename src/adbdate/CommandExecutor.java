@@ -133,4 +133,8 @@ public class CommandExecutor {
         execute("adb shell dumpsys deviceidle disable");
         return stringBuilder.toString();
     }
+
+    public String getDevices() {
+        return execute("adb devices").replace("List of devices attached", "");
+    }
 }
