@@ -52,30 +52,24 @@ public class CommandExecutor {
 
     public void addHour() {
         hour++;
-        addHours(hour);
+        addTime(hour, day);
     }
 
     public void addDay() {
         day++;
-        addDays(day);
+        addTime(hour, day);
     }
 
     public void addWeek() {
         day += 7;
-        addDays(day);
+        addTime(hour, day);
     }
 
-    private void addTime(long days, ChronoUnit days2) {
-        LocalDateTime localDateTime = getNow().plus(days, days2);
+    private void addTime(long hours, long days) {
+        LocalDateTime localDateTime = getNow()
+                .plus(hours, ChronoUnit.HOURS)
+                .plus(days, ChronoUnit.DAYS);
         setDate(localDateTime);
-    }
-
-    private void addDays(long days) {
-        addTime(days, ChronoUnit.DAYS);
-    }
-
-    private void addHours(long hours) {
-        addTime(hours, ChronoUnit.HOURS);
     }
 
     public String readDate() {
