@@ -14,6 +14,10 @@ public class Main extends Application {
         primaryStage.setTitle("ADB Date");
         Scene scene = new Scene(root, 300, 275);
         primaryStage.setScene(scene);
+        primaryStage.setMinHeight(500);
+        primaryStage.setMinWidth(300);
+        primaryStage.setMaxHeight(500);
+        primaryStage.setMaxWidth(300);
         primaryStage.show();
     }
 
