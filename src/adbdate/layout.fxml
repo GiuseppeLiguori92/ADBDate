@@ -2,35 +2,42 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane minHeight="500.0" maxHeight="500.0" prefHeight="500.0" maxWidth="362.0" minWidth="-Infinity" prefWidth="282.0"
-      xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adbdate.Controller">
-    <Label fx:id="lblDate" layoutX="14.0" layoutY="15.0" prefHeight="17.0" prefWidth="260.0" text="Label date"/>
+<Pane maxHeight="500.0" maxWidth="362.0" minHeight="500.0" minWidth="-Infinity" prefHeight="500.0" prefWidth="282.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adbdate.Controller">
+    <Label fx:id="lblDate" layoutX="14.0" layoutY="15.0" prefHeight="17.0" prefWidth="260.0" text="Label date" />
 
-    <Label layoutX="14.0" layoutY="43.0" text="Days"/>
+    <Label layoutX="14.0" layoutY="43.0" text="Days" />
 
-    <Button fx:id="btPlusDay" layoutX="63.0" layoutY="38.0" mnemonicParsing="false" text="+1"/>
+    <Button fx:id="btPlusDay" layoutX="63.0" layoutY="38.0" mnemonicParsing="false" text="+1" />
 
-    <Button fx:id="btPlusWeek" layoutX="103.0" layoutY="38.0" mnemonicParsing="false" text="+7"/>
+    <Button fx:id="btPlusWeek" layoutX="103.0" layoutY="38.0" mnemonicParsing="false" text="+7" />
 
-    <Label layoutX="14.0" layoutY="83.0" text="Hour"/>
+    <Label layoutX="14.0" layoutY="83.0" text="Hour" />
 
-    <Button fx:id="btPlusHour" layoutX="63.0" layoutY="78.0" mnemonicParsing="false" text="+1"/>
+    <Button fx:id="btPlusHour" layoutX="63.0" layoutY="78.0" mnemonicParsing="false" text="+1" />
 
-    <Button fx:id="btReset" layoutX="163.0" layoutY="38.0" mnemonicParsing="false" text="reset date"/>
+    <Label layoutX="14.0" layoutY="120.0" text="Mins" />
 
-    <Button fx:id="btBootBroadcast" layoutX="9.0" layoutY="278.0" mnemonicParsing="false" text="BOOT_COMPLETED"/>
+    <Button fx:id="btPlusMinute" layoutX="63.0" layoutY="115.0" mnemonicParsing="false" text="+1" />
 
-    <Button fx:id="btRoot" layoutX="12.0" layoutY="145.0" mnemonicParsing="false" text="ROOT"/>
+    <Button fx:id="btPlusMinutes" layoutX="106.0" layoutY="115.0" mnemonicParsing="false" text="+" />
+    <TextField fx:id="tfMinutes" layoutX="135.0" layoutY="115.0" prefHeight="27.0" prefWidth="32.0" text="10" />
 
-    <Label fx:id="lblRoot" layoutX="12.0" layoutY="128.0" prefHeight="17.0" prefWidth="243.0" text="Label"/>
+    <Button fx:id="btReset" layoutX="163.0" layoutY="38.0" mnemonicParsing="false" text="reset date" />
 
-    <Label fx:id="lblStatus" layoutX="12.0" layoutY="200.0" prefHeight="17.0" prefWidth="253.0" text="Label"/>
+    <Button fx:id="btBootBroadcast" layoutX="11.0" layoutY="284.0" mnemonicParsing="false" text="BOOT_COMPLETED" />
 
-    <Button fx:id="btDozeMode" layoutX="12.0" layoutY="224.0" mnemonicParsing="false" text="DEEP DOZE"/>
+    <Button fx:id="btRoot" layoutX="12.0" layoutY="173.0" mnemonicParsing="false" text="ROOT" />
 
-    <Button fx:id="btNormalMode" layoutX="120.0" layoutY="224.0" mnemonicParsing="false" text="NORMAL MODE"/>
+    <Label fx:id="lblRoot" layoutX="15.0" layoutY="156.0" prefHeight="17.0" prefWidth="243.0" text="Label" />
 
-    <Label fx:id="lblDevices" layoutX="9.0" layoutY="318.0" prefHeight="162.0" prefWidth="260.0" text="Label date"/>
+    <Label fx:id="lblStatus" layoutX="14.0" layoutY="206.0" prefHeight="17.0" prefWidth="253.0" text="Label" />
+
+    <Button fx:id="btDozeMode" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" text="DEEP DOZE" />
+
+    <Button fx:id="btNormalMode" layoutX="122.0" layoutY="230.0" mnemonicParsing="false" text="NORMAL MODE" />
+
+    <Label fx:id="lblDevices" layoutX="11.0" layoutY="324.0" prefHeight="162.0" prefWidth="260.0" text="Label date" />
 </Pane>

@@ -3,6 +3,7 @@ package adbdate;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class Controller implements Contract.View {
     private Contract.Presenter presenter;
@@ -13,6 +14,12 @@ public class Controller implements Contract.View {
     private Button btPlusHour;
     @FXML
     private Button btPlusDay;
+    @FXML
+    private Button btPlusMinute;
+    @FXML
+    private Button btPlusMinutes;
+    @FXML
+    private TextField tfMinutes;
     @FXML
     private Button btPlusWeek;
     @FXML
@@ -41,6 +48,8 @@ public class Controller implements Contract.View {
 
         btPlusHour.setOnAction(event -> presenter.addHour());
         btPlusDay.setOnAction(event -> presenter.addDay());
+        btPlusMinute.setOnAction(event -> presenter.addMinute());
+        btPlusMinutes.setOnAction(event -> presenter.addMinutes(Long.parseLong(tfMinutes.getText())));
         btPlusWeek.setOnAction(event -> presenter.addWeek());
         btReset.setOnAction(event -> presenter.reset());
 

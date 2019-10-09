@@ -12,6 +12,7 @@ public class CommandExecutor {
 
     private long day = 0;
     private long hour = 0;
+    private long minutes = 0;
 
     private String execute(String command) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -43,6 +44,7 @@ public class CommandExecutor {
     public void resetDate() {
         day = 0;
         hour = 0;
+        minutes = 0;
         setDate(getNow());
     }
 
@@ -52,21 +54,32 @@ public class CommandExecutor {
 
     public void addHour() {
         hour++;
-        addTime(hour, day);
+        addTime(minutes, hour, day);
     }
 
     public void addDay() {
         day++;
-        addTime(hour, day);
+        addTime(minutes, hour, day);
+    }
+
+    public void addMinute() {
+        minutes++;
+        addTime(minutes, hour, day);
+    }
+
+    public void addMinutes(long minutes) {
+        this.minutes += minutes;
+        addTime(this.minutes, hour, day);
     }
 
     public void addWeek() {
         day += 7;
-        addTime(hour, day);
+        addTime(minutes, hour, day);
     }
 
-    private void addTime(long hours, long days) {
+    private void addTime(long minutes, long hours, long days) {
         LocalDateTime localDateTime = getNow()
+                .plus(minutes, ChronoUnit.MINUTES)
                 .plus(hours, ChronoUnit.HOURS)
                 .plus(days, ChronoUnit.DAYS);
         setDate(localDateTime);
@@ -81,7 +94,7 @@ public class CommandExecutor {
     }
 
     public void sendBootBroadcast() {
-       sendBroadcast("android.intent.action.BOOT_COMPLETED");
+        sendBroadcast("android.intent.action.BOOT_COMPLETED");
     }
 
     private void sendBroadcast(String action) {

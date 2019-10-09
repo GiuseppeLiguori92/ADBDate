@@ -32,6 +32,18 @@ public class ControllerPresenter implements Presenter {
     }
 
     @Override
+    public void addMinute() {
+        commandExecutor.addMinute();
+        view.showDate(commandExecutor.readDate());
+    }
+
+    @Override
+    public void addMinutes(long minutes) {
+        commandExecutor.addMinutes(minutes);
+        view.showDate(commandExecutor.readDate());
+    }
+
+    @Override
     public void addHour() {
         commandExecutor.addHour();
         view.showDate(commandExecutor.readDate());

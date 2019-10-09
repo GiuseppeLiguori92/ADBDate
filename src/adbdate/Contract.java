@@ -4,6 +4,8 @@ public interface Contract {
     interface Presenter {
         void initialise();
         void addHour();
+        void addMinute();
+        void addMinutes(long minutes);
         void addDay();
         void addWeek();
         void reset();
