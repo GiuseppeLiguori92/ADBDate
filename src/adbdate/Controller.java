@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ListView;
+import java.util.List;
 
 public class Controller implements Contract.View {
     private Contract.Presenter presenter;
@@ -42,6 +44,12 @@ public class Controller implements Contract.View {
     private Label lblDevices;
 
     @FXML
+    private ListView listInstalledPackages;
+
+    @FXML
+    private TextField tfInstalledPackagesFilter;
+
+    @FXML
     private void initialize() {
         presenter = new ControllerPresenter(this);
         presenter.initialise();
@@ -59,6 +67,11 @@ public class Controller implements Contract.View {
 
         btDozeMode.setOnAction(event -> presenter.dozeMode());
         btNormalMode.setOnAction(event -> presenter.normalMode());
+
+        tfInstalledPackagesFilter.textProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("textfield changed from " + oldValue + " to " + newValue);
+            presenter.filterInstalledPackages(newValue);
+        });
     }
 
     @Override
@@ -84,5 +97,11 @@ public class Controller implements Contract.View {
     @Override
     public void showIsNotRooted() {
         lblRoot.setText("*NOT Rooted");
+    }
+
+    @Override
+    public void showInstalledPackages(List<String> installedPackages) {
+        listInstalledPackages.getItems().clear();
+        listInstalledPackages.getItems().addAll(installedPackages);
     }
 }
