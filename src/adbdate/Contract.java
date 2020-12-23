@@ -1,5 +1,7 @@
 package adbdate;
 
+import java.util.List;
+
 public interface Contract {
     interface Presenter {
         void initialise();
@@ -13,8 +15,9 @@ public interface Contract {
         void dozeMode();
         void normalMode();
         void getStatus();
-
         void sendBootBroadcast();
+        void getInstalledPackages();
+        void filterInstalledPackages(String newValue);
     }
 
     interface View {
@@ -23,5 +26,6 @@ public interface Contract {
         void showStatus(String status);
         void showIsRooted();
         void showIsNotRooted();
+        void showInstalledPackages(List<String> installedPackages);
     }
 }

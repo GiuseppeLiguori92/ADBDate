@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CommandExecutor {
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMddHHmmYYYY.ss");
@@ -99,6 +101,18 @@ public class CommandExecutor {
 
     private void sendBroadcast(String action) {
         execute("adb shell am broadcast -a " + action);
+    }
+
+    public List<String> getInstalledPackages() {
+        String installedPackagesString = execute("adb shell pm list packages");
+        ArrayList<String> installedPackages = new ArrayList<>();
+        for (String installedPackage : installedPackagesString.split("package:")) {
+            if (installedPackage != null && !installedPackage.isEmpty()) {
+                installedPackages.add(installedPackage);
+            }
+        }
+
+        return installedPackages;
     }
 
     public void setDate(LocalDateTime localDateTime) {
